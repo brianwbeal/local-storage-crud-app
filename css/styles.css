@@ -460,6 +460,12 @@ main > div > form {
   margin-bottom: 60px;
   display: flex;
 }
+@media (max-width: 767px) {
+  main > div > form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 main > div > form input[type=text] {
   line-height: 40px;
   border-radius: 8px;
