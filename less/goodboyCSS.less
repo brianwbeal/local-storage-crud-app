@@ -1,0 +1,615 @@
+//==================================
+// variables
+//==================================
+
+//==================================
+// colors
+//==================================
+
+@white: #ffffff;
+@off-white: #f5f5f5;
+@light-grey: #eeeeee;
+@grey: #bdbdbd;
+@dark-grey: #757575; // white font
+@deep-grey: #424242; // white font
+@black: #212121; // white font
+@red: #ef5350;
+@orange: #ffa726;
+@yellow: #ffee58;
+@light-green: #c5e1a5;
+@green: #9ccc65;
+@dark-green: #33691e; // white font
+@light-blue: #29b6f6;
+@blue: #42a5f5;
+@dark-blue: #01579b; // white font
+
+
+//==================================
+// border defaults
+//==================================
+
+@border: 1px solid @grey;
+@border-dashed: 10px dashed @grey;
+@border-wide: 10px solid @grey;
+@border-radius: 8px;
+
+
+//==================================
+// layout breakpoints
+//==================================
+
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+@screen-lg-max: 1499px;
+@screen-xl-min: 1500px;
+
+
+//==================================
+// box shadows
+//==================================
+
+@shadow-0: none !important;
+@shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+@shadow-2: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+@shadow-3: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+@shadow-4: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+@shadow-5: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+
+
+//==================================
+// default transition
+//==================================
+
+@transition: .15s ease-in-out;
+
+
+//==================================
+// animations
+//==================================
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+//==================================
+// Mixins
+//==================================
+
+//==================================
+// box
+//==================================
+
+.box {
+    padding: 16px;
+    border: @border;
+    border-radius: @border-radius;
+}
+
+
+//==================================
+// container
+//==================================
+
+.container {
+    display: block;
+    margin: 0 auto;
+    padding: 0 16px;
+    @media (min-width: @screen-sm-min) {
+        width: 750px;
+    }
+    @media (min-width: @screen-md-min) {
+        width: 970px;
+    }
+    @media (min-width: @screen-lg-min) {
+        width: 1170px;
+    }
+    @media (min-width: @screen-xl-min) {
+        width: 1470px;
+    }
+}
+
+
+//==================================
+// shapes
+//==================================
+
+.circle {
+    border-radius: 50% !important;
+}
+
+
+//==================================
+// color backgrounds
+//==================================
+
+.white {
+    background-color: @white;
+}
+
+.off-white {
+    background-color: @off-white;
+}
+
+.light-grey {
+    background-color: @light-grey;
+}
+
+.grey {
+    background-color: @grey;
+}
+
+.dark-grey {
+    background-color: @dark-grey;
+    color: @white  !important;
+}
+
+.deep-grey {
+    background-color: @deep-grey;
+    color: @white  !important;
+}
+
+.black {
+    background-color: @black;
+    color: @white  !important;
+}
+
+.red {
+    background-color: @red;
+}
+
+.orange {
+    background-color: @orange;
+}
+
+.yellow {
+    background-color: @yellow;
+}
+
+.light-green {
+    background-color: @light-green;
+}
+
+.green {
+    background-color: @green;
+}
+
+.dark-green {
+    background-color: @dark-green;
+    color: @white  !important;
+}
+
+.light-blue {
+    background-color: @light-blue;
+}
+
+.blue {
+    background-color: @blue;
+}
+
+.dark-blue {
+    background-color: @dark-blue;
+    color: @white  !important;
+}
+
+.transparent {
+    background: transparent;
+}
+
+
+//==================================
+// hiddens
+//==================================
+
+.hidden-xs {
+    @media (max-width: @screen-xs-max) {
+        display: none;
+    }
+}
+
+.hidden-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        display: none;
+    }
+}
+
+.hidden-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        display: none;
+    }
+}
+
+.hidden-lg {
+    @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max) {
+        display: none;
+    }
+}
+
+.hidden-xl {
+    @media (min-width: @screen-xl-min) {
+        display: none;
+    }
+}
+
+
+//==================================
+// text alignment
+//==================================
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+
+
+
+//==================================
+// Reset
+//==================================
+
+html, 
+body, 
+div, 
+span, 
+applet, 
+object, 
+iframe,
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre,
+a, 
+abbr, 
+acronym, 
+address, 
+big, 
+cite, 
+code,
+del, 
+dfn, 
+em, 
+img, 
+ins, 
+kbd, 
+q, 
+s, 
+samp,
+small, 
+strike, 
+strong, 
+sub, 
+sup, 
+tt, 
+var,
+b, 
+u, 
+i, 
+center,
+dl,
+dt, 
+dd, 
+ol, 
+ul, 
+li,
+fieldset, 
+form, 
+label, 
+legend,
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td,
+article, 
+aside, 
+canvas, 
+details, 
+embed, 
+figure, 
+figcaption, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+output, 
+ruby, 
+section, 
+summary,
+time, 
+mark, 
+audio, 
+video {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1;
+}
+
+
+
+
+//==================================
+// Defaults
+//==================================
+
+//==================================
+// typography
+//==================================
+
+a,
+abbr,
+article,
+blockquote,
+button,
+code,
+div,
+em,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+label,
+li,
+input,
+input::placeholder,
+main,
+ol,
+p,
+pre,
+section,
+small,
+span,
+strong,
+ul {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: @black;
+    transition: @transition;
+}
+
+a,
+abbr,
+article,
+blockquote,
+button,
+code,
+div,
+em,
+form,
+label,
+li,
+input,
+input::placeholder,
+main,
+ol,
+p,
+pre,
+section,
+small,
+span,
+strong,
+ul {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 58px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 64px;
+    }
+}
+
+h2 {
+    font-size: 50px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 54px;
+    }
+}
+
+h3 {
+    font-size: 40px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 44px;
+    }
+}
+
+h4 {
+    font-size: 30px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 34px;
+    }
+}
+
+h5 {
+    font-size: 20px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 24px;
+    }
+}
+
+h6 {
+    font-size: 16px;
+
+    @media(min-width: @screen-sm-min) {
+        font-size: 18px;
+    }
+}
+
+blockquote {
+    padding: 16px;
+    border-left: 10px solid @dark-grey;
+}
+
+label {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+
+
+
+//==================================
+// Components
+//==================================
+
+//==================================
+// buttons
+//==================================
+
+.button {
+    .center;
+    .off-white;
+    display: inline-block;
+    border: @border;
+    border-radius: @border-radius;
+    line-height: 40px;
+    min-width: 100px;
+    padding: 0 8px;
+
+    &:active, &:focus, &:hover {
+        .grey;
+        cursor: pointer;
+    }
+
+    &.pill {
+        border-radius: 25px !important;
+    }
+
+    &.outline {
+        .transparent;
+        border: 2px solid @black;
+
+        &:active, &:focus, &:hover {
+            .grey;
+        }
+    }
+}
+
+
+//==================================
+// cards
+//==================================
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (min-width: @screen-sm-min) {
+        flex-direction: row;
+    }
+}
+
+.card {
+    .box;
+
+    &__image {
+        .grey;
+        border-radius: @border-radius;
+        width: 100%;
+        height: 150px;
+        margin-bottom: 30px;
+        @media (min-width: @screen-sm-min) {
+            height: 250px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__button {
+        .button;
+    }
+}
+
+
+//==================================
+// modals
+//==================================
+
+.modal {
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        .box;
+        .white;
+
+        >p {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+//==================================
+// spinners
+//==================================
+
+#spinner {
+    border: 16px solid @light-grey;
+    border-top: 16px solid @grey;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+}
+
