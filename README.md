@@ -14,4 +14,4 @@
 
 ## Notes
 
-[live demo](Brianwbeal.github.io/local-storage-app)
+[live demo](https://brianwbeal.github.io/local-storage-crud-app/)
